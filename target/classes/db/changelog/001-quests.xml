@@ -1,0 +1,46 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="001-1" author="system">
+        <createTable tableName="quest">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="category" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="summary" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tech_stack" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="start_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="closing_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="kudos_points" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sponsor_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)" defaultValueComputed="current_timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

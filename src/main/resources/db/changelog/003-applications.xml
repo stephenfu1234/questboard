@@ -1,0 +1,44 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="003-1" author="system">
+        <createTable tableName="application">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="quest_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="applicant_comments" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ubs_user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="submitted_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_selected" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="sponsor_comments" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_by" type="varchar(255)" defaultValueComputed="current_timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
