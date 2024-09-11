@@ -44,14 +44,14 @@ public class QuestServiceImpl implements QuestService {
             List<Quest> filteredQuests = quests.stream()
                     .filter(quest -> {
 
-                        if(!listQuestsDto.getCategory().isEmpty() && quest.getCategory().equals(listQuestsDto.getCategory())) {
+                        if(!listQuestsDto.getCategory().isEmpty() && quest.getCategory().equalsIgnoreCase(listQuestsDto.getCategory().toLowerCase())) {
                             return true;
                         }
 
                         if(!listQuestsDto.getKeyword().isEmpty() && (
-                                quest.getCategory().contains(listQuestsDto.getKeyword().toLowerCase()) ||
-                                        quest.getSummary().contains(listQuestsDto.getKeyword().toLowerCase()) ||
-                                        quest.getTechStack().contains(listQuestsDto.getKeyword().toLowerCase())
+                                quest.getCategory().toLowerCase().contains(listQuestsDto.getKeyword().toLowerCase()) ||
+                                        quest.getSummary().toLowerCase().contains(listQuestsDto.getKeyword().toLowerCase()) ||
+                                        quest.getTechStack().toLowerCase().contains(listQuestsDto.getKeyword().toLowerCase())
                         )) {
                             return true;
                         }
